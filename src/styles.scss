@@ -1,0 +1,295 @@
+// Variables
+
+// Fonts
+$montserrat: 'Montserrat', sans-serif;
+$roboto:     'Roboto', sans-serif;
+
+// Colors
+$dreamshare-white:      #FFFFFF;
+$dreamshare-black:      #000000;
+$dreamshare-light-grey: #999999;
+$dreamshare-grey:       #666666;
+$dreamshare-grey-ash:   #E3E3E3;
+$dreamshare-dark-grey:  #444444;
+$dreamshare-red:        #FF4E50;
+$dreamshare-yellow:     #FFA710;
+$dreamshare-purple:     #667DF3;
+$dreamshare-green:      #19D4CA;
+
+// Breakpoints
+$phone:    767px;
+$tablet:   992px;
+$desktop: 1200px;
+//mixin is maybe not necessary
+// for a small project like this
+
+// Misc
+%btn-styles {
+  border-radius: 40px;
+  border: 2px solid $dreamshare-red;
+  color: $dreamshare-white;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+%container-padding {
+  padding: 1em 1.5em 0em 1em;
+  max-width: 1240px;
+  margin: 0 auto;
+
+  @media screen and (min-width: $phone) {
+    padding: 2em 5em 0em 5em;
+  }
+  @media screen and (min-width: $desktop) {
+    padding: 2em 9em 0em 9em;
+  }
+}
+
+
+// Font Sizes
+.header-main {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 37px;
+
+  @media screen and (min-width: $phone) {
+    font-size: 52px;
+    line-height: 63px;
+  }
+}
+
+.header-sub {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.header-title {
+  font-size: 20px;
+}
+
+// dragged and dropped from index.css
+body {
+  font-family: $montserrat;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+
+
+.site-container {
+  @extend %container-padding;
+}
+
+.component-title {
+  font-size: 22px;
+  color: $dreamshare-dark-grey;
+  font-weight: bold;
+  padding-top: 3em;
+}
+
+.landing-hero {
+  padding: 0;
+  background: linear-gradient( rgba(0, 0, 0, 0.2),
+  rgba(0, 0, 0, 0.2) ),
+  url('./images/Desktop/Header and Promo/Background/Bitmap.png')no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 500px;
+
+  @media screen and (min-width: $phone) {
+    min-height: 700px;
+  }
+
+  &__login {
+    &--title {
+      text-transform: uppercase;
+      font-weight: bold;
+      color: $dreamshare-white;
+      padding-top: 4em;
+      @media screen and (min-width: $phone) {
+        text-align: left;
+      }
+    }
+
+    &--account-ctas {
+      text-align: center;
+      @media screen and (min-width: $phone) {
+        text-align: right;
+        float: right;
+      }
+    }
+
+    &--account-ctas,
+    &--title {
+      @media screen and (min-width: $phone) {
+        width: 50%;
+        padding-top: 0px;
+      }
+    }
+    &--wrapper {
+      padding-top: 2.5em;
+      padding-bottom: 1.5em;
+
+      .login-btn {
+        @extend %btn-styles;
+        color: $dreamshare-white;
+        font-weight: normal;
+        padding: 7px 16px;
+
+        &--login {
+          border: none;
+        }
+        &--signup {
+          border-color: $dreamshare-white;
+        }
+      }
+    }
+  }
+
+  &__header {
+    &--wrapper {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+      color: $dreamshare-white;
+      padding: 0 1em;
+
+      @media screen and (min-width: $phone) {
+        padding-top: 4em;
+      }
+      @media screen and (min-width: $phone) {
+        padding-top: 6em;
+      }
+      @media screen and (min-width: $desktop) {
+        padding-top: 8em;
+      }
+    }
+
+    &--main {
+      text-transform: uppercase;
+      text-shadow: 0 2px 5px 0 rgba(0,0,0,0.2);
+      font-family: $montserrat;
+    }
+
+    &--sub {
+      font-family: $roboto;
+      padding-bottom: 30px;
+      font-weight: 300;
+      padding-top: .25em;
+    }
+  }
+  .landing-btn {
+    @extend %btn-styles;
+    background-color: $dreamshare-red;
+    color: $dreamshare-white;
+    padding: 10px 45px;
+    @media screen and (min-width: $tablet) {
+      padding: 10px 18px;
+    }
+
+  }
+}
+
+.about-dreamshare {
+  &--wrapper {
+  }
+
+  &__cards {
+    @media screen and (min-width: $phone) {
+      display: flex;
+      flex:1;
+    }
+
+    .card {
+      flex: 1;
+      height: 100%;
+      border-radius: 4px;
+      height: 240px;
+      margin: 5px 15px;
+      position: relative;
+
+      @media screen and (min-width: $phone) {
+        height: 400px;
+        margin: 5px 10px;
+      }
+      &-primary {
+        background: linear-gradient( rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3) ),
+        url('./images/Desktop/How it works/Step 1/Bitmap.png')no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      &-secondary {
+        background: linear-gradient( rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3) ),
+        url('./images/Desktop/How it works/Step 2/Bitmap.png')no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+      &-tertiary {
+        background: linear-gradient( rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3) ),
+        url('./images/Desktop/How it works/Step 3/Bitmap.png')no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+
+      &-copy {
+        &--wrapper {
+          color: $dreamshare-white;
+          text-align: left;
+          position: absolute;
+          bottom: 0;
+        }
+        &--step {
+          background-color: $dreamshare-red;
+          border-radius: 15px;
+          padding: 5px 14px;
+          display: inline;
+          letter-spacing: 2px;
+          font-size: 10px;
+          font-weight: 300;
+          text-transform: uppercase;
+          margin-left: 8px;
+          margin-bottom: 15px;
+        }
+        &--title {
+          padding: 0px 8px;
+          font-weight: bold;
+          font-size: 24px;
+          margin-bottom: 8px;
+          margin-top: 14px;
+        }
+        &--text {
+          padding: 0px 8px;
+          color: $dreamshare-grey-ash;
+          font-size: 14px;
+          font-family: $roboto;
+          font-weight: 300;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+}
